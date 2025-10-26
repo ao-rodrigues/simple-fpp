@@ -6,16 +6,22 @@ const PITCH_MAX: float = 1.5
 @export_range(1, 35, 1) var base_speed: float = 10
 @export_range(10, 400, 1) var acceleration: float = 100
 @export var sprint_multiplier: float = 1.3
+@export_range(0.1, 3, 0.1) var jump_height: float = 1
 
 @export_range(0.1, 3.0, 0.1, "or_greater") var camera_sensitivity: float = 1
 @export_range(0.001, 0.01, 0.001) var mouse_camera_sensitivity_modifier: float = 0.001
 
 var _mouse_captured: bool
 var _look_dir: Vector2
+var _is_jumping: bool
+
 var _walk_vel: Vector3
+var _gravity_vel: Vector3
+var _jump_vel: Vector3
 
 @onready var _camera: Camera3D = $CameraPivot/Camera
 @onready var _camera_pivot: Node3D = $CameraPivot
+@onready var _gravity_value: float = ProjectSettings.get_setting("physics/3d/default_gravity")
 
 func _ready() -> void:
 	_capture_mouse()
@@ -25,18 +31,20 @@ func _unhandled_input(event: InputEvent) -> void:
 		_look_dir = event.relative
 		if _mouse_captured: 
 			_rotate_camera(mouse_camera_sensitivity_modifier)
-	if Input.is_action_pressed(&"capture_mouse"):
+	if Input.is_action_just_pressed(&"capture_mouse"):
 		_capture_mouse()
-	if Input.is_action_pressed(&"release_mouse"):
+	if Input.is_action_just_pressed(&"release_mouse"):
 		_release_mouse()
-	if Input.is_action_pressed(&"exit"):
+	if Input.is_action_just_pressed(&"exit"):
 		get_tree().quit()
 
 func _physics_process(delta: float) -> void:
+	if Input.is_action_just_pressed(&"jump"):
+		_is_jumping = true
 	if _mouse_captured:
 		_handle_joypad_camera_rotation(delta)
 
-	velocity = _walk(delta)
+	velocity = _walk(delta) + _gravity(delta) + _jump(delta)
 	move_and_slide()
 
 func _capture_mouse() -> void:
@@ -71,3 +79,17 @@ func _walk(delta: float) -> Vector3:
 
 	_walk_vel = _walk_vel.move_toward(walk_dir * speed * move_dir.length(), acceleration * delta)
 	return _walk_vel
+	
+func _gravity(delta: float) -> Vector3:
+	_gravity_vel = Vector3.ZERO if is_on_floor() else _gravity_vel.move_toward(Vector3(0, velocity.y - _gravity_value, 0), _gravity_value * delta)
+	return _gravity_vel
+	
+func _jump(delta: float) -> Vector3:
+	if _is_jumping:
+		if is_on_floor():
+			_jump_vel = Vector3(0, sqrt(4 * jump_height * _gravity_value), 0)
+		_is_jumping = false
+		return _jump_vel
+	
+	_jump_vel = Vector3.ZERO if is_on_floor() or is_on_ceiling_only() else _jump_vel.move_toward(Vector3.ZERO, _gravity_value * delta)
+	return _jump_vel
