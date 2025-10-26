@@ -1,4 +1,19 @@
-[gd_scene load_steps=3 format=3 uid="uid://btkbdj7c00d06"]
+[gd_scene load_steps=7 format=3 uid="uid://btkbdj7c00d06"]
+
+[ext_resource type="PackedScene" uid="uid://brpx0ryw5ftfd" path="res://player.tscn" id="1_3h184"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_3h184"]
+sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+
+[sub_resource type="Sky" id="Sky_cojph"]
+sky_material = SubResource("ProceduralSkyMaterial_3h184")
+
+[sub_resource type="Environment" id="Environment_p7lbm"]
+background_mode = 2
+sky = SubResource("Sky_cojph")
+tonemap_mode = 2
+glow_enabled = true
 
 [sub_resource type="BoxMesh" id="BoxMesh_f3bkm"]
 size = Vector3(60, 1, 60)
@@ -6,6 +21,13 @@ size = Vector3(60, 1, 60)
 [sub_resource type="CylinderMesh" id="CylinderMesh_3h184"]
 
 [node name="Sandbox" type="Node3D"]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
+shadow_enabled = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_p7lbm")
 
 [node name="Ground" type="MeshInstance3D" parent="."]
 mesh = SubResource("BoxMesh_f3bkm")
@@ -91,3 +113,6 @@ mesh = SubResource("CylinderMesh_3h184")
 [node name="MeshInstance3D18" type="MeshInstance3D" parent="Obstacles"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.865715, 1.2830496, -2.8692436)
 mesh = SubResource("CylinderMesh_3h184")
+
+[node name="Player" parent="." instance=ExtResource("1_3h184")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.102045, 0, 12.186817)
