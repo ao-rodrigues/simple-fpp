@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://btkbdj7c00d06"]
+[gd_scene load_steps=9 format=3 uid="uid://btkbdj7c00d06"]
 
 [ext_resource type="PackedScene" uid="uid://brpx0ryw5ftfd" path="res://player.tscn" id="1_3h184"]
 
@@ -15,10 +15,15 @@ sky = SubResource("Sky_cojph")
 tonemap_mode = 2
 glow_enabled = true
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_3h184"]
+size = Vector3(60, 1, 60)
+
 [sub_resource type="BoxMesh" id="BoxMesh_f3bkm"]
 size = Vector3(60, 1, 60)
 
-[sub_resource type="CylinderMesh" id="CylinderMesh_3h184"]
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_3h184"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_cojph"]
 
 [node name="Sandbox" type="Node3D"]
 
@@ -29,90 +34,232 @@ shadow_enabled = true
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_p7lbm")
 
-[node name="Ground" type="MeshInstance3D" parent="."]
-mesh = SubResource("BoxMesh_f3bkm")
-
-[node name="Obstacles" type="Node3D" parent="."]
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Obstacles"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.2830486, 0)
-mesh = SubResource("CylinderMesh_3h184")
-
-[node name="MeshInstance3D2" type="MeshInstance3D" parent="Obstacles"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.0091305, 1.2830505, -12.415954)
-mesh = SubResource("CylinderMesh_3h184")
-
-[node name="MeshInstance3D19" type="MeshInstance3D" parent="Obstacles"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22.026217, 1.2830505, -13.626834)
-mesh = SubResource("CylinderMesh_3h184")
-
-[node name="MeshInstance3D20" type="MeshInstance3D" parent="Obstacles"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.628017, 1.2830524, 19.708221)
-mesh = SubResource("CylinderMesh_3h184")
-
-[node name="MeshInstance3D3" type="MeshInstance3D" parent="Obstacles"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.787018, 1.2830505, 6.2715807)
-mesh = SubResource("CylinderMesh_3h184")
-
-[node name="MeshInstance3D4" type="MeshInstance3D" parent="Obstacles"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.4954777, 1.2830505, -8.309832)
-mesh = SubResource("CylinderMesh_3h184")
-
-[node name="MeshInstance3D5" type="MeshInstance3D" parent="Obstacles"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.57406, 1.2830505, 1.735282)
-mesh = SubResource("CylinderMesh_3h184")
-
-[node name="MeshInstance3D6" type="MeshInstance3D" parent="Obstacles"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.4463367, 1.2830505, 10.441932)
-mesh = SubResource("CylinderMesh_3h184")
-
-[node name="MeshInstance3D7" type="MeshInstance3D" parent="Obstacles"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.235708, 1.2830524, -12.472596)
-mesh = SubResource("CylinderMesh_3h184")
-
-[node name="MeshInstance3D8" type="MeshInstance3D" parent="Obstacles"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.2814045, 1.2830524, -20.522202)
-mesh = SubResource("CylinderMesh_3h184")
-
-[node name="MeshInstance3D9" type="MeshInstance3D" parent="Obstacles"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.8997793, 1.2830524, 6.103533)
-mesh = SubResource("CylinderMesh_3h184")
-
-[node name="MeshInstance3D10" type="MeshInstance3D" parent="Obstacles"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.898509, 1.2830524, 18.945957)
-mesh = SubResource("CylinderMesh_3h184")
-
-[node name="MeshInstance3D11" type="MeshInstance3D" parent="Obstacles"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.010918, 1.2830524, 15.0613)
-mesh = SubResource("CylinderMesh_3h184")
-
-[node name="MeshInstance3D12" type="MeshInstance3D" parent="Obstacles"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.039886, 1.2830524, 20.02529)
-mesh = SubResource("CylinderMesh_3h184")
-
-[node name="MeshInstance3D13" type="MeshInstance3D" parent="Obstacles"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.4093819, 1.2830505, 11.667932)
-mesh = SubResource("CylinderMesh_3h184")
-
-[node name="MeshInstance3D14" type="MeshInstance3D" parent="Obstacles"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.198292, 1.2830486, 18.237316)
-mesh = SubResource("CylinderMesh_3h184")
-
-[node name="MeshInstance3D15" type="MeshInstance3D" parent="Obstacles"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.815548, 1.2830496, -1.0181599)
-mesh = SubResource("CylinderMesh_3h184")
-
-[node name="MeshInstance3D16" type="MeshInstance3D" parent="Obstacles"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.096713, 1.2830496, -17.9228)
-mesh = SubResource("CylinderMesh_3h184")
-
-[node name="MeshInstance3D17" type="MeshInstance3D" parent="Obstacles"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.865715, 1.2830496, -2.8692436)
-mesh = SubResource("CylinderMesh_3h184")
-
-[node name="MeshInstance3D18" type="MeshInstance3D" parent="Obstacles"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.865715, 1.2830496, -2.8692436)
-mesh = SubResource("CylinderMesh_3h184")
-
 [node name="Player" parent="." instance=ExtResource("1_3h184")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.102045, 0, 12.186817)
+
+[node name="Ground" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Ground"]
+shape = SubResource("BoxShape3D_3h184")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Ground"]
+mesh = SubResource("BoxMesh_f3bkm")
+skeleton = NodePath("../..")
+
+[node name="Obstacles" type="Node" parent="."]
+
+[node name="Obstacle" type="StaticBody3D" parent="Obstacles"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.4660654, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Obstacles/Obstacle"]
+shape = SubResource("CylinderShape3D_3h184")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Obstacles/Obstacle"]
+mesh = SubResource("CylinderMesh_cojph")
+
+[node name="Obstacle2" type="StaticBody3D" parent="Obstacles"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.861891, 1.4660654, 5.588091)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Obstacles/Obstacle2"]
+shape = SubResource("CylinderShape3D_3h184")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Obstacles/Obstacle2"]
+mesh = SubResource("CylinderMesh_cojph")
+
+[node name="Obstacle3" type="StaticBody3D" parent="Obstacles"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.817495, 1.4660654, -9.489063)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Obstacles/Obstacle3"]
+shape = SubResource("CylinderShape3D_3h184")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Obstacles/Obstacle3"]
+mesh = SubResource("CylinderMesh_cojph")
+
+[node name="Obstacle4" type="StaticBody3D" parent="Obstacles"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.007494, 1.4660654, 17.435913)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Obstacles/Obstacle4"]
+shape = SubResource("CylinderShape3D_3h184")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Obstacles/Obstacle4"]
+mesh = SubResource("CylinderMesh_cojph")
+
+[node name="Obstacle5" type="StaticBody3D" parent="Obstacles"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.266256, 1.4660654, -16.390488)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Obstacles/Obstacle5"]
+shape = SubResource("CylinderShape3D_3h184")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Obstacles/Obstacle5"]
+mesh = SubResource("CylinderMesh_cojph")
+
+[node name="Obstacle6" type="StaticBody3D" parent="Obstacles"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.582422, 1.4660654, -4.976858)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Obstacles/Obstacle6"]
+shape = SubResource("CylinderShape3D_3h184")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Obstacles/Obstacle6"]
+mesh = SubResource("CylinderMesh_cojph")
+
+[node name="Obstacle7" type="StaticBody3D" parent="Obstacles"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.856554, 1.4660654, 3.709156)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Obstacles/Obstacle7"]
+shape = SubResource("CylinderShape3D_3h184")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Obstacles/Obstacle7"]
+mesh = SubResource("CylinderMesh_cojph")
+
+[node name="Obstacle8" type="StaticBody3D" parent="Obstacles"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.823854, 1.4660654, 10.8500595)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Obstacles/Obstacle8"]
+shape = SubResource("CylinderShape3D_3h184")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Obstacles/Obstacle8"]
+mesh = SubResource("CylinderMesh_cojph")
+
+[node name="Obstacle9" type="StaticBody3D" parent="Obstacles"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.380482, 1.4660654, -5.65399)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Obstacles/Obstacle9"]
+shape = SubResource("CylinderShape3D_3h184")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Obstacles/Obstacle9"]
+mesh = SubResource("CylinderMesh_cojph")
+
+[node name="Obstacle10" type="StaticBody3D" parent="Obstacles"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.49915, 1.4660654, 1.5775962)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Obstacles/Obstacle10"]
+shape = SubResource("CylinderShape3D_3h184")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Obstacles/Obstacle10"]
+mesh = SubResource("CylinderMesh_cojph")
+
+[node name="Obstacle11" type="StaticBody3D" parent="Obstacles"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.697699, 1.4660654, -20.74691)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Obstacles/Obstacle11"]
+shape = SubResource("CylinderShape3D_3h184")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Obstacles/Obstacle11"]
+mesh = SubResource("CylinderMesh_cojph")
+
+[node name="Obstacle12" type="StaticBody3D" parent="Obstacles"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.7058125, 1.4660654, -23.740894)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Obstacles/Obstacle12"]
+shape = SubResource("CylinderShape3D_3h184")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Obstacles/Obstacle12"]
+mesh = SubResource("CylinderMesh_cojph")
+
+[node name="Obstacle13" type="StaticBody3D" parent="Obstacles"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.7864437, 1.4660654, -12.118868)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Obstacles/Obstacle13"]
+shape = SubResource("CylinderShape3D_3h184")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Obstacles/Obstacle13"]
+mesh = SubResource("CylinderMesh_cojph")
+
+[node name="Obstacle14" type="StaticBody3D" parent="Obstacles"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.325874, 1.4660654, -7.839425)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Obstacles/Obstacle14"]
+shape = SubResource("CylinderShape3D_3h184")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Obstacles/Obstacle14"]
+mesh = SubResource("CylinderMesh_cojph")
+
+[node name="Obstacle15" type="StaticBody3D" parent="Obstacles"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.624086, 1.4660654, -4.920013)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Obstacles/Obstacle15"]
+shape = SubResource("CylinderShape3D_3h184")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Obstacles/Obstacle15"]
+mesh = SubResource("CylinderMesh_cojph")
+
+[node name="Obstacle16" type="StaticBody3D" parent="Obstacles"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.558208, 1.4660654, 9.1108055)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Obstacles/Obstacle16"]
+shape = SubResource("CylinderShape3D_3h184")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Obstacles/Obstacle16"]
+mesh = SubResource("CylinderMesh_cojph")
+
+[node name="Obstacle17" type="StaticBody3D" parent="Obstacles"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -26.121742, 1.4660654, -18.951107)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Obstacles/Obstacle17"]
+shape = SubResource("CylinderShape3D_3h184")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Obstacles/Obstacle17"]
+mesh = SubResource("CylinderMesh_cojph")
+
+[node name="Obstacle18" type="StaticBody3D" parent="Obstacles"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20.41649, 1.4660654, 21.18856)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Obstacles/Obstacle18"]
+shape = SubResource("CylinderShape3D_3h184")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Obstacles/Obstacle18"]
+mesh = SubResource("CylinderMesh_cojph")
+
+[node name="Obstacle19" type="StaticBody3D" parent="Obstacles"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.839428, 1.4660654, 20.418936)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Obstacles/Obstacle19"]
+shape = SubResource("CylinderShape3D_3h184")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Obstacles/Obstacle19"]
+mesh = SubResource("CylinderMesh_cojph")
+
+[node name="Obstacle20" type="StaticBody3D" parent="Obstacles"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.331846, 1.4660654, 23.4132)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Obstacles/Obstacle20"]
+shape = SubResource("CylinderShape3D_3h184")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Obstacles/Obstacle20"]
+mesh = SubResource("CylinderMesh_cojph")
+
+[node name="Obstacle21" type="StaticBody3D" parent="Obstacles"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.2329407, 1.4660654, 22.875881)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Obstacles/Obstacle21"]
+shape = SubResource("CylinderShape3D_3h184")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Obstacles/Obstacle21"]
+mesh = SubResource("CylinderMesh_cojph")
+
+[node name="Obstacle22" type="StaticBody3D" parent="Obstacles"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.0146656, 1.4660654, 11.958878)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Obstacles/Obstacle22"]
+shape = SubResource("CylinderShape3D_3h184")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Obstacles/Obstacle22"]
+mesh = SubResource("CylinderMesh_cojph")
+
+[node name="Obstacle23" type="StaticBody3D" parent="Obstacles"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.974533, 1.4660654, 3.4636269)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Obstacles/Obstacle23"]
+shape = SubResource("CylinderShape3D_3h184")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Obstacles/Obstacle23"]
+mesh = SubResource("CylinderMesh_cojph")
+
+[node name="Obstacle24" type="StaticBody3D" parent="Obstacles"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.84851, 1.4660654, -21.36789)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Obstacles/Obstacle24"]
+shape = SubResource("CylinderShape3D_3h184")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Obstacles/Obstacle24"]
+mesh = SubResource("CylinderMesh_cojph")
