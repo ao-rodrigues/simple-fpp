@@ -1,0 +1,93 @@
+[gd_scene load_steps=3 format=3 uid="uid://btkbdj7c00d06"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_f3bkm"]
+size = Vector3(60, 1, 60)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_3h184"]
+
+[node name="Sandbox" type="Node3D"]
+
+[node name="Ground" type="MeshInstance3D" parent="."]
+mesh = SubResource("BoxMesh_f3bkm")
+
+[node name="Obstacles" type="Node3D" parent="."]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Obstacles"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.2830486, 0)
+mesh = SubResource("CylinderMesh_3h184")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="Obstacles"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.0091305, 1.2830505, -12.415954)
+mesh = SubResource("CylinderMesh_3h184")
+
+[node name="MeshInstance3D19" type="MeshInstance3D" parent="Obstacles"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22.026217, 1.2830505, -13.626834)
+mesh = SubResource("CylinderMesh_3h184")
+
+[node name="MeshInstance3D20" type="MeshInstance3D" parent="Obstacles"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.628017, 1.2830524, 19.708221)
+mesh = SubResource("CylinderMesh_3h184")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="Obstacles"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.787018, 1.2830505, 6.2715807)
+mesh = SubResource("CylinderMesh_3h184")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="Obstacles"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.4954777, 1.2830505, -8.309832)
+mesh = SubResource("CylinderMesh_3h184")
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="Obstacles"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.57406, 1.2830505, 1.735282)
+mesh = SubResource("CylinderMesh_3h184")
+
+[node name="MeshInstance3D6" type="MeshInstance3D" parent="Obstacles"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.4463367, 1.2830505, 10.441932)
+mesh = SubResource("CylinderMesh_3h184")
+
+[node name="MeshInstance3D7" type="MeshInstance3D" parent="Obstacles"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.235708, 1.2830524, -12.472596)
+mesh = SubResource("CylinderMesh_3h184")
+
+[node name="MeshInstance3D8" type="MeshInstance3D" parent="Obstacles"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.2814045, 1.2830524, -20.522202)
+mesh = SubResource("CylinderMesh_3h184")
+
+[node name="MeshInstance3D9" type="MeshInstance3D" parent="Obstacles"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.8997793, 1.2830524, 6.103533)
+mesh = SubResource("CylinderMesh_3h184")
+
+[node name="MeshInstance3D10" type="MeshInstance3D" parent="Obstacles"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.898509, 1.2830524, 18.945957)
+mesh = SubResource("CylinderMesh_3h184")
+
+[node name="MeshInstance3D11" type="MeshInstance3D" parent="Obstacles"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.010918, 1.2830524, 15.0613)
+mesh = SubResource("CylinderMesh_3h184")
+
+[node name="MeshInstance3D12" type="MeshInstance3D" parent="Obstacles"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.039886, 1.2830524, 20.02529)
+mesh = SubResource("CylinderMesh_3h184")
+
+[node name="MeshInstance3D13" type="MeshInstance3D" parent="Obstacles"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.4093819, 1.2830505, 11.667932)
+mesh = SubResource("CylinderMesh_3h184")
+
+[node name="MeshInstance3D14" type="MeshInstance3D" parent="Obstacles"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.198292, 1.2830486, 18.237316)
+mesh = SubResource("CylinderMesh_3h184")
+
+[node name="MeshInstance3D15" type="MeshInstance3D" parent="Obstacles"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.815548, 1.2830496, -1.0181599)
+mesh = SubResource("CylinderMesh_3h184")
+
+[node name="MeshInstance3D16" type="MeshInstance3D" parent="Obstacles"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.096713, 1.2830496, -17.9228)
+mesh = SubResource("CylinderMesh_3h184")
+
+[node name="MeshInstance3D17" type="MeshInstance3D" parent="Obstacles"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.865715, 1.2830496, -2.8692436)
+mesh = SubResource("CylinderMesh_3h184")
+
+[node name="MeshInstance3D18" type="MeshInstance3D" parent="Obstacles"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.865715, 1.2830496, -2.8692436)
+mesh = SubResource("CylinderMesh_3h184")
