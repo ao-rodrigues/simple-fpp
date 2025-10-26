@@ -5,7 +5,7 @@ const PITCH_MAX: float = 1.5
 
 @export_range(1, 35, 1) var base_speed: float = 10
 @export_range(10, 400, 1) var acceleration: float = 100
-@export var sprint_multiplier: float = 1.3
+@export_range(1, 10, 0.1) var sprint_multiplier: float = 2.5
 @export_range(0.1, 3, 0.1) var jump_height: float = 1
 
 @export_range(0.1, 3.0, 0.1, "or_greater") var camera_sensitivity: float = 1
