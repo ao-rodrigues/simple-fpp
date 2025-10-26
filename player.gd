@@ -27,7 +27,9 @@ func _unhandled_input(event: InputEvent) -> void:
 	if event is InputEventMouseMotion:
 		_look_dir = event.relative
 		if _mouse_captured: _rotate_camera()
-		
+	elif Input.is_action_just_pressed(&"exit"):
+		get_tree().quit()
+
 func _physics_process(delta: float) -> void:
 	if _mouse_captured:
 		_handle_joypad_camera_rotation(delta)
